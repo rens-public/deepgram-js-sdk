@@ -11,7 +11,7 @@ export const resolveFetch = (customFetch?: Fetch): Fetch => {
   } else {
     _fetch = fetch;
   }
-  return (...args) => _fetch(...args);
+  return (...args: any[]) => _fetch(...args as [any]);
 };
 
 export const fetchWithAuth = (apiKey: string, customFetch?: Fetch): Fetch => {
